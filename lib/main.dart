@@ -1,4 +1,5 @@
 import 'package:chat_app/Theme/light_mode_theme.dart';
+import 'package:chat_app/auth/login_or_register.dart';
 import 'package:flutter/material.dart';
 
 import 'Screens/login_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: light_mode,
-      home: RegisterPage()
+      home: LoginOrRegister(),
     );
   }
 }

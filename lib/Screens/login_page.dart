@@ -10,12 +10,18 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  // tap to go to register page
+  final void Function()? ontap;
+
   // Login Method
   void login(){
     print("login button tapped");
   }
 
-  LoginPage({Key? key}) : super(key: key);
+  LoginPage({
+    Key? key,
+  required this.ontap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +72,7 @@ class LoginPage extends StatelessWidget {
             children: [
               Text("Don't have an account? ",style: TextStyle(color: Theme.of(context).colorScheme.primary),),
               GestureDetector(
-                onTap: (){},
+                onTap: ontap,
                   child: Text("Register Now",
                     style: TextStyle(color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold),),
