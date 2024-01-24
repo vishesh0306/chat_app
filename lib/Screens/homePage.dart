@@ -1,5 +1,5 @@
 import 'package:chat_app/Screens/settings_page.dart';
-import 'package:chat_app/auth/auth_service.dart';
+import '../services/auth/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

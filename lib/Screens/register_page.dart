@@ -1,4 +1,4 @@
-import 'package:chat_app/auth/auth_service.dart';
+import '../services/auth/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
