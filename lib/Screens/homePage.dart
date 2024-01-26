@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
     //  return list view
 
       return ListView(
-        children: snapshot.data!.map<Widget>((userData)=>_BuildUserListItem(userData,context)).toList()
+        children: snapshot.data!.map<Widget>((userData)=> _BuildUserListItem(userData,context)).toList()
 
       );
 
@@ -55,12 +55,18 @@ class HomePage extends StatelessWidget {
 Widget _BuildUserListItem(Map<String,dynamic> userData, BuildContext context){
 
     //    display All users except current user
-      return UserTile(
-        name: userData['email'],
-        ontap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> ChatPage(receiverEmail: userData['email'])
-          ));
-        },);
+  if(userData["email"] != _authService.getCurrentUser()!.email) {
+    return UserTile(
+      name: userData['email'],
+      ontap: () {
+        Navigator.push(context, MaterialPageRoute(
+            builder: (context) => ChatPage(receiverEmail: userData['email'])
+        ));
+      },);
+  }
+  else{
+    return Container();
+  }
 }
 }
 
